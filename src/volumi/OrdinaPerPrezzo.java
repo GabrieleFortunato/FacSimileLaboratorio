@@ -2,6 +2,12 @@ package volumi;
 
 import java.util.Comparator;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class OrdinaPerPrezzo implements Comparator<Volume> {
 
 	@Override

@@ -4,6 +4,12 @@ import eccezioni.AnnoNonValidoEccezione;
 import eccezioni.NumeroCopieEccezione;
 import eccezioni.PrezzoNegativoEccezione;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class VolumeRaro extends Volume {
 
 	private int numeroCopie;

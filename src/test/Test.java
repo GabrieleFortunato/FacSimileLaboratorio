@@ -16,6 +16,13 @@ import volumi.Autore;
 import volumi.Volume;
 import volumi.VolumeRaro;
 
+
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class Test {
 
 	private static final int zero = 0;

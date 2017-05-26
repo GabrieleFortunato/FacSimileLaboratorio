@@ -3,6 +3,12 @@ package volumi;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class OrdinaPerNomeAutore implements Comparator<Volume> {
 
 	@Override

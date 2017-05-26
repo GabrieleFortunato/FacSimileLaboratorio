@@ -1,5 +1,11 @@
 package eccezioni;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class PrezzoNegativoEccezione extends Exception {
 
 	/**
@@ -12,7 +18,7 @@ public class PrezzoNegativoEccezione extends Exception {
 	 * @param message
 	 */
 	public void printMessage(String message){
-		System.out.println(message);
+		Logger.getLogger(message);
 	}
 	
 }

@@ -9,6 +9,12 @@ import eccezioni.AutoreNonPresenteEccezione;
 import eccezioni.PrezzoNegativoEccezione;
 import utility.Utility;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class Volume {
 
 	private String codice;

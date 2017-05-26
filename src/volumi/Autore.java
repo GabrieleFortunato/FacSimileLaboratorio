@@ -1,5 +1,12 @@
 package volumi;
 
+
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class Autore {
 
 	private String nome;

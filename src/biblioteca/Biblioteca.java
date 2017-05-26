@@ -6,6 +6,12 @@ import eccezioni.VolumeNonPresenteEccezione;
 import eccezioni.VolumePresenteEccezione;
 import volumi.Volume;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class Biblioteca implements Iterable<String>{
 
 	private TreeMap<String,Volume> volumi;

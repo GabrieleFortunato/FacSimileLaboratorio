@@ -1,5 +1,11 @@
 package utility;
 
+/**
+ * Classe Biblioteca
+ *
+ * @author Gabriele Fortunato
+ * @version 1.0 
+ */
 public class Utility {
 
 	/**
