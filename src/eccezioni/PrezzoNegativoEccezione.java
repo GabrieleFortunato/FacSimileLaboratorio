@@ -18,7 +18,7 @@ public class PrezzoNegativoEccezione extends Exception {
 	 * @param message
 	 */
 	public void printMessage(String message){
-		Logger.getLogger(message);
+		Logger.getLoger(message);
 	}
 	
 }
