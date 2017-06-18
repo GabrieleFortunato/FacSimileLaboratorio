@@ -1,5 +1,6 @@
 package eccezioni;
 
+import java.util.logging.Logger;
 
 /**
  * Classe Biblioteca
