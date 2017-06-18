@@ -24,3 +24,4 @@ public class PrezzoNegativoEccezione extends Exception {
 	}
 	
 }
+
