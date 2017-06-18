@@ -19,7 +19,7 @@ public class VolumePresenteEccezione extends Exception {
 	 * @param message
 	 */
 	public void printMessage(String message){
-		Logger.getLogger(message);
+		Logger.getLoger(message);
 	}
 	
 }
