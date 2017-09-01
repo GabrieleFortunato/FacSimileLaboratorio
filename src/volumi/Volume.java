@@ -11,7 +11,6 @@ import utility.Utility;
 
 /**
  * Classe Biblioteca
- *
  * @author Gabriele Fortunato
  * @version 1.0 
  */
@@ -35,7 +34,6 @@ public class Volume {
 	 */
 	public Volume(String titolo, int anno, double prezzo, boolean prestato) 
 			throws AnnoNonValidoEccezione, PrezzoNegativoEccezione {
-	
 		this.setTitolo(titolo);
 		this.setAnno(anno);
 		this.setPrezzo(prezzo);
