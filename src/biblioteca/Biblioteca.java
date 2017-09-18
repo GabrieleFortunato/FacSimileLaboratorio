@@ -8,7 +8,6 @@ import volumi.Volume;
 
 /**
  * Classe Biblioteca
- *
  * @author Gabriele Fortunato
  * @version 1.0 
  */

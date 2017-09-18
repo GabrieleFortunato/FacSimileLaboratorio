@@ -16,7 +16,6 @@ import volumi.Autore;
 import volumi.Volume;
 import volumi.VolumeRaro;
 
-
 /**
  * Classe Biblioteca
  *
@@ -249,4 +248,5 @@ public class Test {
 		}
 		return autore;
 	}
+
 }
