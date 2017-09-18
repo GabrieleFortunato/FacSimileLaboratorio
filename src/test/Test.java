@@ -18,7 +18,6 @@ import volumi.VolumeRaro;
 
 /**
  * Classe Biblioteca
- *
  * @author Gabriele Fortunato
  * @version 1.0 
  */
