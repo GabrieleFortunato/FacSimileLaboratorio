@@ -22,6 +22,7 @@ public class Volume {
 	private double prezzo;
 	private boolean prestato;
 	private HashSet<Autore> autori;
+	private final int zero = 0;
 	
 	/**
 	 * Metodo costruttore
@@ -76,7 +77,7 @@ public class Volume {
 	 * @throws PrezzoNegativoEccezione 
 	 */
 	private void setPrezzo(double prezzo) throws PrezzoNegativoEccezione {
-		if (prezzo>0){
+		if (prezzo>zero){
 			this.prezzo = prezzo;
 		} else {
 			throw new PrezzoNegativoEccezione();
