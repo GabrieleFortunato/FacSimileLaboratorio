@@ -1,11 +1,5 @@
 package utility;
 
-/**
- * Classe Biblioteca
- *
- * @author Gabriele Fortunato
- * @version 1.0 
- */
 public class Utility {
 
 	/**
@@ -14,7 +8,7 @@ public class Utility {
 	 * @param b
 	 * @return
 	 */
-	public static double round(double a, double b){
+	public static double arrotonda(double a, double b) {
 		return Math.floor(a*Math.pow(10, b))/Math.pow(10, b);
 	}
 	

@@ -1,27 +1,18 @@
 package eccezioni;
 
-import java.util.logging.Logger;
-
-/**
- * Classe Biblioteca
- *
- * @author Gabriele Fortunato
- * @version 1.0 
- */
 public class AutoreNonPresenteEccezione extends Exception {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Stampa a video un messaggio quando viene lanciata l'eccezione
-	 * @param message
+	 * @param messaggio
 	 */
-	public void printMessage(String message){
-		Logger.getLogger(message);
+	public void stampaMessaggio(String messaggio) {
+		System.out.println(messaggio);
 	}
-
+	
 }
-

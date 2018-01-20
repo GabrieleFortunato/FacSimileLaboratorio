@@ -1,6 +1,6 @@
 package eccezioni;
 
-public class VolumeNonPresenteEccezione extends Exception {
+public class NumeroCopieStampateEccezione extends Exception {
 
 	/**
 	 * 

@@ -4,23 +4,18 @@ import java.util.Calendar;
 import java.util.Comparator;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
-import eccezioni.AnnoNonValidoEccezione;
+import eccezioni.AnnoEccezione;
 import eccezioni.AutoreNonPresenteEccezione;
-import eccezioni.PrezzoNegativoEccezione;
+import eccezioni.PrezzoEccezione;
 import utility.Utility;
 
-/**
- * Classe Biblioteca
- * @author Gabriele Fortunato
- * @version 1.0 
- */
 public class Volume {
 
 	private String codice;
 	private String titolo;
 	private int anno;
 	private double prezzo;
-	private boolean prestato;
+	private boolean stato;
 	private HashSet<Autore> autori;
 	private final int zero = 0;
 	
@@ -29,16 +24,16 @@ public class Volume {
 	 * @param titolo
 	 * @param anno
 	 * @param prezzo
-	 * @param prodotto
-	 * @throws AnnoNonValidoEccezione 
-	 * @throws PrezzoNegativoEccezione 
+	 * @param stato
+	 * @throws AnnoEccezione 
+	 * @throws PrezzoEccezione 
 	 */
-	public Volume(String titolo, int anno, double prezzo, boolean prestato) 
-			throws AnnoNonValidoEccezione, PrezzoNegativoEccezione {
+	public Volume(String titolo, int anno, double prezzo, boolean stato) 
+			throws AnnoEccezione, PrezzoEccezione {
 		this.setTitolo(titolo);
 		this.setAnno(anno);
 		this.setPrezzo(prezzo);
-		this.setPrestato(prestato);
+		this.setStato(stato);
 		this.setAutori(new HashSet<>());
 	}
 
@@ -50,57 +45,6 @@ public class Volume {
 		this.codice = codice;
 	}
 
-	/**
-	 * Imposta il titolo delolume
-	 * @param titolo
-	 */
-	private void setTitolo(String titolo) {
-		this.titolo = titolo;
-	}
-
-	/**
-	 * Imposta l'anno di produzione del volume
-	 * @param anno
-	 * @throws AnnoNonValidoEccezione 
-	 */
-	private void setAnno(int anno) throws AnnoNonValidoEccezione {
-		if (anno<=new GregorianCalendar().get(Calendar.YEAR)){
-			this.anno = anno;
-		} else {
-			throw new AnnoNonValidoEccezione();
-		}
-	}
-
-	/**
-	 * Imposta il prezzo del volume
-	 * @param prezzo
-	 * @throws PrezzoNegativoEccezione 
-	 */
-	private void setPrezzo(double prezzo) throws PrezzoNegativoEccezione {
-		if (prezzo>zero){
-			this.prezzo = prezzo;
-		} else {
-			throw new PrezzoNegativoEccezione();
-		}
-	}
-
-	/**
-	 * Imposta la variabile che il controlla 
-	 * se il volume è stato prodotto oppure no 
-	 * @param prodotto
-	 */
-	private void setPrestato(boolean prodotto) {
-		this.prestato = prodotto;
-	}
-	
-	/**
-	 * Imposta gli autori del volume
-	 * @param autori
-	 */
-	private void setAutori(HashSet<Autore> autori) {
-		this.autori = autori;
-	}
-	
 	/**
 	 * Restituisce il titolo del volume
 	 * @return
@@ -124,14 +68,13 @@ public class Volume {
 	public double getPrezzo() {
 		return prezzo;
 	}
-	
+
 	/**
-	 * Restituisce la variabile che il controlla 
-	 * se il volume è stato prodotto oppure no 
-	 * @param prodotto
+	 * Restituisce lo stato del volume
+	 * @return
 	 */
-	public boolean isPrestato() {
-		return prestato;
+	public boolean isStato() {
+		return stato;
 	}
 
 	/**
@@ -143,34 +86,85 @@ public class Volume {
 	}
 
 	/**
-	 * Aggiungi un autore
+	 * Imposta il titolo del volume
+	 * @param titolo
+	 */
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
+	}
+
+	/**
+	 * Imposta l'anno di produzione del volume
+	 * @param anno
+	 * @throws AnnoEccezione 
+	 */
+	public void setAnno(int anno) throws AnnoEccezione {
+		GregorianCalendar data = new GregorianCalendar();
+		int annoCorrente = data.get(Calendar.YEAR);
+		if (anno<=annoCorrente) {
+			this.anno = anno;
+		} else {
+			throw new AnnoEccezione();
+		}
+	}
+
+	/**
+	 * Imposta il prezzo del volume
+	 * @param prezzo
+	 * @throws PrezzoEccezione 
+	 */
+	public void setPrezzo(double prezzo) throws PrezzoEccezione {
+		if (prezzo>=zero) {
+			this.prezzo = prezzo;
+		} else {
+			throw new PrezzoEccezione();
+		}
+	}
+
+	/**
+	 * Imposta lo stato del volume
+	 */
+	public void setStato(boolean stato) {
+		this.stato = stato;
+	}
+
+	/**
+	 * Imposta gli autori del volume
+	 * @param autori
+	 */
+	public void setAutori(HashSet<Autore> autori) {
+		this.autori = autori;
+	}
+	
+	/**
+	 * Aggiunge un autore al volume
 	 * @param autore
 	 */
-	public void aggiungiAutore(Autore autore){
+	public void aggiungiAutore(Autore autore) {
 		autori.add(autore);
 	}
 	
 	/**
-	 * Rimuove un autore
+	 * Rimuove un autore dal volume
 	 * @param autore
 	 * @throws AutoreNonPresenteEccezione
 	 */
-	public void rimuoviAutore(Autore autore) throws AutoreNonPresenteEccezione{
-		if (autori.contains(autore)){
+	public void rimuoviAutore(Autore autore) throws AutoreNonPresenteEccezione {
+		if (autori.contains(autore)) {
 			autori.remove(autore);
 		} else {
 			throw new AutoreNonPresenteEccezione();
 		}
 	}
-
+	
 	@Override
 	/**
 	 * Restituisce le informazioni sotto forma di stringa
 	 */
 	public String toString() {
 		return 
-				"Codice: "+codice+" Titolo: "+titolo+" Anno: "+anno+" Prezzo: " 
-				+ Utility.round(prezzo,2)+" Prestato="+prestato+" Autori: "+autori;
+				"Codice: "+codice+" Titolo: "+titolo+" Anno: "+anno+" Prezzo: "+Utility.arrotonda(prezzo,2)
+				+" Prestato: "+stato+" Autori: "+autori;
 	}
 	
 	/**
@@ -187,6 +181,7 @@ public class Volume {
 	 */
 	public static Comparator<Volume> ordinaPerNomeAutore(){
 		return new OrdinaPerNomeAutore();
+		
 	}
 	
 }

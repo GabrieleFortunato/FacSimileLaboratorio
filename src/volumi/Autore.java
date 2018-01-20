@@ -1,17 +1,9 @@
 package volumi;
-
-
-/**
- * Classe Biblioteca
- *
- * @author Gabriele Fortunato
- * @version 1.0 
- */
 public class Autore {
 
 	private String nome;
 	private String cognome;
-	private String codiceFiscale;	
+	private String codiceFiscale;
 	
 	/**
 	 * Metodo costruttore
@@ -32,7 +24,15 @@ public class Autore {
 	private void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
+	/**
+	 * Restituisce il nome dell'autore
+	 * @return
+	 */
+	public String getNome() {
+		return nome;
+	}
+
 	/**
 	 * Imposta il cognome dell'autore
 	 * @param cognome
@@ -49,22 +49,16 @@ public class Autore {
 		this.codiceFiscale = codiceFiscale;
 	}
 
-	/**
-	 * Restituisce il nome dell'autore
-	 * @return
-	 */
-	public String getNome() {
-		return nome;
-	}
-
 	@Override
 	/**
-	 * Genera l'hashcode in base al codice fiscale
+	 * Restituisce l'hashCode dell'autore
 	 */
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((codiceFiscale == null) ? 0 : codiceFiscale.hashCode());
+		result = prime * result + ((cognome == null) ? 0 : cognome.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
 
@@ -73,7 +67,7 @@ public class Autore {
 	 * Restituisce le informazioni sotto forma di stringa
 	 */
 	public String toString() {
-		return nome+" "+cognome;
+		return "Nome: "+nome+" Cognome: "+cognome+" Codice fiscale: "+codiceFiscale;
 	}
 		
 }
