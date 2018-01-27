@@ -49,7 +49,7 @@ public class Test {
 			Autore[] autori = autori();
 			Volume[] volumi = volumi(autori);
 			Biblioteca biblioteca = biblioteca(volumi);
-			ArrayList<Volume> collezione = collezione(biblioteca);
+			ArrayList<Volume> collezione = creaCollezione(biblioteca);
 			stampaCollezione(collezione);
 		}
 
@@ -115,7 +115,7 @@ public class Test {
 		 * @param biblioteca
 		 * @return
 		 */
-		private static ArrayList<Volume> collezione(Biblioteca biblioteca){
+		private static ArrayList<Volume> creaCollezione(Biblioteca biblioteca){
 			ArrayList<Volume> collezione = new ArrayList<>();
 			Iterator<String> iter = biblioteca.iterator();
 			while(iter.hasNext()){
